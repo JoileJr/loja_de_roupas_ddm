@@ -31,7 +31,7 @@ class LoginView extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: 50),
+                const SizedBox(height:100),
                 Text(
                   'Faça o login em sua conta',
                   style: TextStyle(
@@ -47,15 +47,36 @@ class LoginView extends StatelessWidget {
                   text: 'Email', obscure: false, 
                   textInputType: TextInputType.emailAddress
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: 20),
                 /// Senha input
                 TextFormGlobal(
                   controller: passwordController, 
                   text: 'Senha', obscure: true, 
                   textInputType: TextInputType.text
                 ),
+                const SizedBox(height: 20),
+                const ButtonGlobal(),
+                const SizedBox(height: 20),
+                Container(
+                  alignment: Alignment.center,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text(
+                    'Não tem conta ?'
+                      ),
+                      InkWell(
+                        child: Text(
+                          ' Cadastre-se',
+                          style: TextStyle(
+                            color: GlobalColors.mainColor
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
                 const SizedBox(height: 10),
-                ButtonGlobal(),
               ],
             ),
           ),

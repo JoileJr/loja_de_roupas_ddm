@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class TextFormGlobal extends StatelessWidget {
-  TextFormGlobal({Key? key, 
+  const TextFormGlobal({Key? key, 
     required this.controller, 
     required this.text, 
     required this.textInputType, 
@@ -17,7 +17,7 @@ class TextFormGlobal extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 55,
-      padding: EdgeInsets.only(top: 3, left: 15),
+      padding: const EdgeInsets.only(top: 3, left: 15),
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(6),
@@ -34,7 +34,8 @@ class TextFormGlobal extends StatelessWidget {
         decoration: InputDecoration(
             hintText: text,
             border: InputBorder.none,
-            contentPadding: EdgeInsets.all(0),
+            contentPadding: const EdgeInsets.all(0),
+            // ignore: prefer_const_constructors
             hintStyle: TextStyle(
               height: 1,
             )),
