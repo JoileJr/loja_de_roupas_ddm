@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:loja_de_roupas/utils/global.colors.dart';
 import 'package:loja_de_roupas/view/widgets/text.form.global.dart';
 
-class LoginView extends StatelessWidget {
-  LoginView({Key? key}) : super(key: key);
+class RegisterView extends StatelessWidget {
+  RegisterView({Key? key}) : super(key: key);
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
@@ -30,9 +30,9 @@ class LoginView extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height:100),
+                const SizedBox(height: 100),
                 Text(
-                  'Faça o login em sua conta',
+                  'Cadastre sua conta',
                   style: TextStyle(
                     color: GlobalColors.textColor,
                     fontSize: 16,
@@ -42,68 +42,45 @@ class LoginView extends StatelessWidget {
                 const SizedBox(height: 15),
                 /// Email input
                 TextFormGlobal(
-                  controller: emailController, 
-                  text: 'Email', obscure: false, 
-                  textInputType: TextInputType.emailAddress
-                ),
+                    controller: emailController,
+                    text: 'Email',
+                    obscure: false,
+                    textInputType: TextInputType.emailAddress),
                 const SizedBox(height: 20),
                 /// Senha input
                 TextFormGlobal(
-                  controller: passwordController, 
-                  text: 'Senha', obscure: true, 
-                  textInputType: TextInputType.text
-                ),
+                    controller: passwordController,
+                    text: 'Senha',
+                    obscure: true,
+                    textInputType: TextInputType.text),
                 const SizedBox(height: 20),
-                
+                /// Senha input
+                TextFormGlobal(
+                    controller: passwordController,
+                    text: 'Confirme sua senha',
+                    obscure: true,
+                    textInputType: TextInputType.text),
+                const SizedBox(height: 20),
                 Container(
-                  alignment: Alignment.center,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
+                    alignment: Alignment.center,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
                             primary: GlobalColors.mainColor // Background color
-                            ),
+                          ),
                         child: Text(
                           ' Entrar ',
                           style: TextStyle(color: Colors.white),
                         ),
-                        onPressed: () {
+                        onPressed: () { 
                           Navigator.pushNamed(context, '/home');
                         },
-                      ),            
-                    ],
-                  ),
-                ),
-
-                const SizedBox(height: 20),
-                Container(
-                  alignment: Alignment.center,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text(
-                    'Não tem conta ? '
-                      ),
-                      ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          primary: GlobalColors.mainColor // Background color
-                        ),
-                        child: Text(
-                          ' Cadastre-se',
-                          style: TextStyle(
-                            color: Colors.white                        
-                          ),
-                        ),
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/cadastro');
-                        },
-
                       ),
                     ],
                   ),
                 ),
-                const SizedBox(height: 10),
               ],
             ),
           ),

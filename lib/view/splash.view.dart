@@ -1,9 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:loja_de_roupas/utils/global.colors.dart';
-import 'package:loja_de_roupas/view/login.view.dart';
 
 class SplashView extends StatelessWidget {
   const SplashView({Key? key}) : super(key: key);
@@ -11,7 +9,7 @@ class SplashView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Timer(const Duration(seconds: 1), () {
-      Get.to(LoginView());
+      Navigator.pushNamed(context, '/login');
     });
 
     return Scaffold(
