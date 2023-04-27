@@ -60,7 +60,7 @@ class AboutView extends StatelessWidget {
             ],
           ),
         ),
-        body: Center(
+        body: const Center(
           child: Text('Sobre minha loja e politicas de privacidade'),
         ),
       ),

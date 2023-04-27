@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loja_de_roupas/utils/global.colors.dart';
 
-class HomeView extends StatelessWidget{
+class HomeView extends StatelessWidget {
   HomeView({Key? key}) : super(key: key);
 
   Widget build(BuildContext context) {
@@ -15,21 +15,19 @@ class HomeView extends StatelessWidget{
           child: ListView(
             padding: EdgeInsets.zero,
             children: <Widget>[
-              DrawerHeader(
-                decoration: BoxDecoration(
-                  color: GlobalColors.mainColor,
+              UserAccountsDrawerHeader(
+                accountName: Text('John Doe'),
+                accountEmail: Text('johndoe@example.com'),
+                currentAccountPicture: const CircleAvatar(
+                  backgroundImage: AssetImage('https://miro.medium.com/v2/resize:fit:1400/1*g09N-jl7JtVjVZGcd-vL2g.jpeg'),
                 ),
-                child: Text(
-                  'Menu',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 24,
-                  ),
+                decoration: BoxDecoration(
+                  color: GlobalColors.mainColor, // definindo a cor de fundo
                 ),
               ),
               ListTile(
-                leading: Icon(Icons.account_circle_outlined),
-                title: Text('Perfil'),
+                leading: const Icon(Icons.account_circle_outlined),
+                title: const Text('Perfil'),
                 onTap: () {
                   Navigator.pushNamed(context, '/perfil');
                 },
@@ -52,7 +50,7 @@ class HomeView extends StatelessWidget{
                 leading: Icon(Icons.favorite_border),
                 title: Text('Favoritos'),
                 onTap: () {
-                  Navigator.pushNamed(context, '/favotiros');
+                  Navigator.pushNamed(context, '/favoritos');
                 },
               ),
               ListTile(
@@ -63,7 +61,7 @@ class HomeView extends StatelessWidget{
                 },
               ),
               ListTile(
-                leading: Icon(Icons.warning),
+                leading: const Icon(Icons.warning),
                 title: Text('Sobre'),
                 onTap: () {
                   Navigator.pushNamed(context, '/sobre');
@@ -72,11 +70,54 @@ class HomeView extends StatelessWidget{
             ],
           ),
         ),
-        body: Center(
-          child: Text('Minha tela principal'),
-        ),
+        body: Container(
+          padding: EdgeInsets.all(16.0),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                flex: 2,
+                child: Image.network(
+                  'https://static.netshoes.com.br/produtos/calca-sarja-terminal-skinny-masculina/06/MCM-0037-006/MCM-0037-006_zoom1.jpg?ts=1671728755&ims=544x',
+                  height: 150,
+                  width: 150,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Expanded(
+                flex: 3,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Nome do Produto',
+                      style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(height: 8.0),
+                    Text(
+                      'R\$ 99,99',
+                      style: TextStyle(fontSize: 16.0),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        IconButton(
+                          icon: Icon(Icons.favorite_border),
+                          onPressed: () {},
+                        ),
+                        IconButton(
+                          icon: Icon(Icons.add_shopping_cart),
+                          onPressed: () {},
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        )
       ),
     );
   }
 }
-

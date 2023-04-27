@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loja_de_roupas/view/widgets/menu.global.dart';
 
 import '../utils/global.colors.dart';
 
@@ -20,7 +21,7 @@ class MyProductsView extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: GlobalColors.mainColor,
                 ),
-                child: Text(
+                child: const Text(
                   'Menu',
                   style: TextStyle(
                     color: Colors.white,
@@ -53,7 +54,7 @@ class MyProductsView extends StatelessWidget {
                 leading: Icon(Icons.favorite_border),
                 title: Text('Favoritos'),
                 onTap: () {
-                  Navigator.pushNamed(context, '/favotiros');
+                  Navigator.pushNamed(context, '/favoritos');
                 },
               ),
               ListTile(
@@ -73,8 +74,79 @@ class MyProductsView extends StatelessWidget {
             ],
           ),
         ),
-        body: Center(
-          child: Text('Meu carinho'),
+        body: ListView(
+          children: [
+            const SizedBox(height: 20),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
+              child: Text(
+                'Meu carrinho',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+            ),
+            const Divider(),
+            ListTile(
+              leading: Image.network(
+                'https://static.netshoes.com.br/produtos/camiseta-colcci-logo-feminina/10/NFN-7286-010/NFN-7286-010_zoom1.jpg?ts=1678119927&ims=544x',
+                width: 100,
+                height: 100,
+                fit: BoxFit.cover,),
+                title: Text('Blusa feminina'),
+                subtitle: Text('R\$ 49,99'),
+                trailing: IconButton(
+                  icon: Icon(Icons.delete),
+                  onPressed: () {},
+                ),
+              ),
+              const Divider(),
+              ListTile(
+                leading: Image.network(
+                  'https://static.netshoes.com.br/produtos/calca-sarja-terminal-skinny-masculina/06/MCM-0037-006/MCM-0037-006_zoom1.jpg?ts=1671728755&ims=544x',
+                  width: 100,
+                  height: 100,
+                  fit: BoxFit.cover,
+                ),
+                title: Text('Calça masculina'),
+                subtitle: Text('R\$ 89,99'),
+                trailing: IconButton(
+                  icon: Icon(Icons.delete),
+                  onPressed: () {},
+                ),
+              ),
+              const SizedBox(height: 20),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    Text(
+                      'Total',
+                      style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      'R\$ 139,98',
+                      style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 20),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    primary: GlobalColors.mainColor // Background color
+                ),
+                child: const Text(
+                  ' Finalizar Compra ',
+                  style: TextStyle(color: Colors.white),
+                ),
+                onPressed: () {
+                  Navigator.pushNamed(context, '/pagamento');
+                },
+              ),
+            ),
+          ],
         ),
       ),
     );

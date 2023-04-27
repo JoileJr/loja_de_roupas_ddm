@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:loja_de_roupas/view/%20payment.view.dart';
+import 'package:loja_de_roupas/view/about.view.dart';
 import 'package:loja_de_roupas/view/favorite.view.dart';
 import 'package:loja_de_roupas/view/home.view.dart';
 import 'package:loja_de_roupas/view/login.view.dart';
@@ -24,9 +26,11 @@ class App extends StatelessWidget {
         '/cadastro': (context) => RegisterView(),
         '/home':(context) => HomeView(),
         '/configuracoes':(context) => SettingsView(),
-        'perfil': (context) => ProfileView(),
-        'meuCarinho': (context) =>  MyProductsView(), 
-        'favoritos':(context) => FavoriteView(),       
+        '/sobre': (context) => AboutView(),
+        '/perfil': (context) => ProfileView(),
+        '/meuCarinho': (context) =>  MyProductsView(),
+        '/favoritos':(context) => FavoriteView(),
+        '/pagamento':(context) => PaymentView(),
       },
     );
   }
