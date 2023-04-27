@@ -21,7 +21,7 @@ class SettingsView extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: GlobalColors.mainColor,
                 ),
-                child: Text(
+                child: const Text(
                   'Menu',
                   style: TextStyle(
                     color: Colors.white,
@@ -74,41 +74,43 @@ class SettingsView extends StatelessWidget {
             ],
           ),
         ),
-        body: Center(
-          child: Container(
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.grey),
-              borderRadius: BorderRadius.circular(10.0),
+        body: ListView(
+          children: [
+            ListTile(
+              title: Text('Notificações'),
+              trailing: Switch(
+                value: true,
+                onChanged: (value) {},
+              ),
             ),
-            child: Column(
-              children: [
-                Image.network(
-                  'https://via.placeholder.com/150',
-                  fit: BoxFit.cover,
-                ),
-                const Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Text(
-                    'Product Name',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16.0,
-                    ),
+            ListTile(
+              title: Text('Idioma'),
+              trailing: DropdownButton<String>(
+                value: 'Português',
+                onChanged: (value) {},
+                items: const [
+                  DropdownMenuItem<String>(
+                    value: 'Português',
+                    child: Text('Português'),
                   ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(bottom: 8.0),
-                  child: Text(
-                    '\$19.99',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16.0,
-                    ),
+                  DropdownMenuItem<String>(
+                    value: 'Inglês',
+                    child: Text('Inglês'),
                   ),
-                ),
-              ],
+                  DropdownMenuItem<String>(
+                    value: 'Espanhol',
+                    child: Text('Espanhol'),
+                  ),
+                ],
+              ),
             ),
-          )
+            ListTile(
+              title: Text('Sobre'),
+              trailing: Icon(Icons.arrow_forward_ios),
+              onTap: () {// Navegar para a tela Sobre
+                 },
+            ),
+          ],
         ),
       ),
     );
