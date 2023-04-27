@@ -106,7 +106,7 @@ class PaymentView extends StatelessWidget {
                 controller: cartaoController,
                 text: 'Numero Cartão',
                 obscure: false,
-                textInputType: TextInputType.emailAddress),
+                textInputType: TextInputType.number),
             const SizedBox(height: 20),
             /// Nome mo cartãp
             TextFormGlobal(
@@ -119,13 +119,13 @@ class PaymentView extends StatelessWidget {
                 controller: cvcController,
                 text: 'CVC',
                 obscure: false,
-                textInputType: TextInputType.text),
+                textInputType: TextInputType.number),
             const SizedBox(height: 20),
             TextFormGlobal(
                 controller: dataVencimentoController,
                 text: 'Data vencimento',
                 obscure: false,
-                textInputType: TextInputType.text),
+                textInputType: TextInputType.datetime),
             const SizedBox(height: 20),
             ListTile(
               title: Text('Formas de pagamento'),
