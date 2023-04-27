@@ -16,8 +16,8 @@ class HomeView extends StatelessWidget {
             padding: EdgeInsets.zero,
             children: <Widget>[
               UserAccountsDrawerHeader(
-                accountName: Text('John Doe'),
-                accountEmail: Text('johndoe@example.com'),
+                accountName: Text('Joile junior'),
+                accountEmail: Text('joile@example.com'),
                 currentAccountPicture: const CircleAvatar(
                   backgroundImage: AssetImage('https://miro.medium.com/v2/resize:fit:1400/1*g09N-jl7JtVjVZGcd-vL2g.jpeg'),
                 ),

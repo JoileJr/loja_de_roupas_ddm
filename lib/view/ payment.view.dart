@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:loja_de_roupas/utils/global.colors.dart';
 

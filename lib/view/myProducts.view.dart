@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:loja_de_roupas/view/widgets/menu.global.dart';
 
 import '../utils/global.colors.dart';
 
@@ -17,21 +16,20 @@ class MyProductsView extends StatelessWidget {
           child: ListView(
             padding: EdgeInsets.zero,
             children: <Widget>[
-              DrawerHeader(
-                decoration: BoxDecoration(
-                  color: GlobalColors.mainColor,
+              UserAccountsDrawerHeader(
+                accountName: Text('Joile Junior'),
+                accountEmail: Text('joile@example.com'),
+                currentAccountPicture: const CircleAvatar(
+                  backgroundImage: AssetImage(
+                      'https://miro.medium.com/v2/resize:fit:1400/1*g09N-jl7JtVjVZGcd-vL2g.jpeg'),
                 ),
-                child: const Text(
-                  'Menu',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 24,
-                  ),
+                decoration: BoxDecoration(
+                  color: GlobalColors.mainColor, // definindo a cor de fundo
                 ),
               ),
               ListTile(
-                leading: Icon(Icons.account_circle_outlined),
-                title: Text('Perfil'),
+                leading: const Icon(Icons.account_circle_outlined),
+                title: const Text('Perfil'),
                 onTap: () {
                   Navigator.pushNamed(context, '/perfil');
                 },
@@ -65,7 +63,7 @@ class MyProductsView extends StatelessWidget {
                 },
               ),
               ListTile(
-                leading: Icon(Icons.warning),
+                leading: const Icon(Icons.warning),
                 title: Text('Sobre'),
                 onTap: () {
                   Navigator.pushNamed(context, '/sobre');

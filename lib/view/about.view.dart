@@ -17,17 +17,23 @@ class AboutView extends StatelessWidget {
           child: ListView(
             padding: EdgeInsets.zero,
             children: <Widget>[
-              DrawerHeader(
+              UserAccountsDrawerHeader(
+                accountName: Text('Joile Junior'),
+                accountEmail: Text('joile@example.com'),
+                currentAccountPicture: const CircleAvatar(
+                  backgroundImage: AssetImage(
+                      'https://miro.medium.com/v2/resize:fit:1400/1*g09N-jl7JtVjVZGcd-vL2g.jpeg'),
+                ),
                 decoration: BoxDecoration(
-                  color: GlobalColors.mainColor,
+                  color: GlobalColors.mainColor, // definindo a cor de fundo
                 ),
-                child: Text(
-                  'Menu',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 24,
-                  ),
-                ),
+              ),
+              ListTile(
+                leading: const Icon(Icons.account_circle_outlined),
+                title: const Text('Perfil'),
+                onTap: () {
+                  Navigator.pushNamed(context, '/perfil');
+                },
               ),
               ListTile(
                 leading: Icon(Icons.home),
@@ -37,17 +43,17 @@ class AboutView extends StatelessWidget {
                 },
               ),
               ListTile(
-                leading: Icon(Icons.account_circle_outlined),
-                title: Text('Perfil'),
+                leading: Icon(Icons.add_shopping_cart),
+                title: Text('Meu carinho'),
                 onTap: () {
-                  Navigator.pushNamed(context, '/perfil');
+                  Navigator.pushNamed(context, '/meuCarinho');
                 },
               ),
               ListTile(
-                leading: Icon(Icons.account_circle_outlined),
-                title: Text('Sobre'),
+                leading: Icon(Icons.favorite_border),
+                title: Text('Favoritos'),
                 onTap: () {
-                  Navigator.pushNamed(context, '/configuracoes');
+                  Navigator.pushNamed(context, '/favoritos');
                 },
               ),
               ListTile(
@@ -55,6 +61,13 @@ class AboutView extends StatelessWidget {
                 title: Text('Configurações'),
                 onTap: () {
                   Navigator.pushNamed(context, '/configuracoes');
+                },
+              ),
+              ListTile(
+                leading: const Icon(Icons.warning),
+                title: Text('Sobre'),
+                onTap: () {
+                  Navigator.pushNamed(context, '/sobre');
                 },
               ),
             ],

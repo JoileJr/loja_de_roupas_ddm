@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:loja_de_roupas/view/widgets/menu.global.dart';
 
 import '../utils/global.colors.dart';
 
@@ -17,21 +16,20 @@ class ProfileView extends StatelessWidget {
           child: ListView(
             padding: EdgeInsets.zero,
             children: <Widget>[
-              DrawerHeader(
-                decoration: BoxDecoration(
-                  color: GlobalColors.mainColor,
+              UserAccountsDrawerHeader(
+                accountName: Text('Joile Junior'),
+                accountEmail: Text('joile@example.com'),
+                currentAccountPicture: const CircleAvatar(
+                  backgroundImage: AssetImage(
+                      'https://miro.medium.com/v2/resize:fit:1400/1*g09N-jl7JtVjVZGcd-vL2g.jpeg'),
                 ),
-                child: Text(
-                  'Menu',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 24,
-                  ),
+                decoration: BoxDecoration(
+                  color: GlobalColors.mainColor, // definindo a cor de fundo
                 ),
               ),
               ListTile(
-                leading: Icon(Icons.account_circle_outlined),
-                title: Text('Perfil'),
+                leading: const Icon(Icons.account_circle_outlined),
+                title: const Text('Perfil'),
                 onTap: () {
                   Navigator.pushNamed(context, '/perfil');
                 },
@@ -54,7 +52,7 @@ class ProfileView extends StatelessWidget {
                 leading: Icon(Icons.favorite_border),
                 title: Text('Favoritos'),
                 onTap: () {
-                  Navigator.pushNamed(context, '/favotiros');
+                  Navigator.pushNamed(context, '/favoritos');
                 },
               ),
               ListTile(
@@ -65,7 +63,7 @@ class ProfileView extends StatelessWidget {
                 },
               ),
               ListTile(
-                leading: Icon(Icons.warning),
+                leading: const Icon(Icons.warning),
                 title: Text('Sobre'),
                 onTap: () {
                   Navigator.pushNamed(context, '/sobre');
@@ -79,7 +77,7 @@ class ProfileView extends StatelessWidget {
             Container(
               padding: EdgeInsets.all(20),
               color: Colors.grey[200],
-              child: Row(
+              child: const Row(
                 children: [
                   CircleAvatar(
                     radius: 50,
@@ -91,13 +89,13 @@ class ProfileView extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'João Silva',
+                        'Joile Junior',
                         style:
                         TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                       ),
                       SizedBox(height: 10),
                       Text(
-                        'joao.silva@gmail.com',
+                        'joile@example.com',
                         style: TextStyle(fontSize: 16),
                       ),
                       SizedBox(height: 10),
@@ -111,27 +109,27 @@ class ProfileView extends StatelessWidget {
                 ],
               ),
             ),
-            ListTile(
+            const ListTile(
               leading: Icon(Icons.location_on),
               title: Text('Endereço'),
               trailing: Icon(Icons.keyboard_arrow_right),
             ),
-            ListTile(
+            const ListTile(
               leading: Icon(Icons.credit_card),
               title: Text('Métodos de pagamento'),
               trailing: Icon(Icons.keyboard_arrow_right),
             ),
-            ListTile(
+             const ListTile(
               leading: Icon(Icons.notifications),
               title: Text('Notificações'),
               trailing: Icon(Icons.keyboard_arrow_right),
             ),
-            ListTile(
+            const ListTile(
               leading: Icon(Icons.help_outline),
               title: Text('Ajuda'),
               trailing: Icon(Icons.keyboard_arrow_right),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {},
               child: Text('Sair'),
