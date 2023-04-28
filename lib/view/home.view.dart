@@ -79,7 +79,7 @@ class HomeView extends StatelessWidget {
                 flex: 2,
                 child: Image.network(
                   'https://static.netshoes.com.br/produtos/calca-sarja-terminal-skinny-masculina/06/MCM-0037-006/MCM-0037-006_zoom1.jpg?ts=1671728755&ims=544x',
-                  height: 150,
+                  height: 250,
                   width: 150,
                   fit: BoxFit.cover,
                 ),
@@ -90,7 +90,7 @@ class HomeView extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Nome do Produto',
+                      'Calça de sarja',
                       style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
                     ),
                     SizedBox(height: 8.0),
@@ -99,7 +99,7 @@ class HomeView extends StatelessWidget {
                       style: TextStyle(fontSize: 16.0),
                     ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         IconButton(
                           icon: Icon(Icons.favorite_border),
@@ -114,6 +114,46 @@ class HomeView extends StatelessWidget {
                   ],
                 ),
               ),
+              Expanded(
+                  flex: 2,
+                  child: Image.network(
+                    'https://static.netshoes.com.br/produtos/camiseta-colcci-logo-feminina/10/NFN-7286-010/NFN-7286-010_zoom1.jpg?ts=1678119927&ims=544x',
+                    height: 250,
+                    width: 150,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                Expanded(
+                  flex: 3,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Blusinha',
+                        style: TextStyle(
+                            fontSize: 18.0, fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(height: 8.0),
+                      Text(
+                        'R\$ 99,99',
+                        style: TextStyle(fontSize: 16.0),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          IconButton(
+                            icon: Icon(Icons.favorite_border),
+                            onPressed: () {},
+                          ),
+                          IconButton(
+                            icon: Icon(Icons.add_shopping_cart),
+                            onPressed: () {},
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
             ],
           ),
         )
