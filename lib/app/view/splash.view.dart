@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:loja_de_roupas/utils/global.colors.dart';
+import 'package:loja_de_roupas/app/utils/global.colors.dart';
 
 class SplashView extends StatelessWidget {
   const SplashView({Key? key}) : super(key: key);

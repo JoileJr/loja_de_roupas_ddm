@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:loja_de_roupas/utils/global.colors.dart';
-import 'package:loja_de_roupas/view/widgets/text.form.global.dart';
+import 'package:loja_de_roupas/app/utils/global.colors.dart';
+import 'package:loja_de_roupas/app/view/widgets/text.form.global.dart';
 
 class LoginView extends StatelessWidget {
   LoginView({Key? key}) : super(key: key);

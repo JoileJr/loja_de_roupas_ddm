@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:loja_de_roupas/view/%20payment.view.dart';
-import 'package:loja_de_roupas/view/about.view.dart';
-import 'package:loja_de_roupas/view/favorite.view.dart';
-import 'package:loja_de_roupas/view/home.view.dart';
-import 'package:loja_de_roupas/view/login.view.dart';
-import 'package:loja_de_roupas/view/myProducts.view.dart';
-import 'package:loja_de_roupas/view/profile.view.dart';
-import 'package:loja_de_roupas/view/register.view.dart';
-import 'package:loja_de_roupas/view/settings.view.dart';
-import 'package:loja_de_roupas/view/splash.view.dart';
+import 'package:loja_de_roupas/app/view/%20payment.view.dart';
+import 'package:loja_de_roupas/app/view/about.view.dart';
+import 'package:loja_de_roupas/app/view/favorite.view.dart';
+import 'package:loja_de_roupas/app/view/home.view.dart';
+import 'package:loja_de_roupas/app/view/login.view.dart';
+import 'package:loja_de_roupas/app/view/myProducts.view.dart';
+import 'package:loja_de_roupas/app/view/profile.view.dart';
+import 'package:loja_de_roupas/app/view/register.view.dart';
+import 'package:loja_de_roupas/app/view/settings.view.dart';
+import 'package:loja_de_roupas/app/view/splash.view.dart';
 
 void main() {
   runApp(const App());
@@ -27,7 +27,7 @@ class App extends StatelessWidget {
         '/home':(context) => HomeView(),
         '/configuracoes':(context) => SettingsView(),
         '/sobre': (context) => AboutView(),
-        '/perfil': (context) => ProfileView(),
+        'perfil': (context) => ProfileView(),
         '/meuCarinho': (context) =>  MyProductsView(),
         '/favoritos':(context) => FavoriteView(),
         '/pagamento':(context) => PaymentView(),

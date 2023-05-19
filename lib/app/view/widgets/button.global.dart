@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:loja_de_roupas/utils/global.colors.dart';
+import 'package:loja_de_roupas/app/utils/global.colors.dart';
 
 class ButtonGlobal extends StatelessWidget {
   const ButtonGlobal({super.key});
