@@ -7,6 +7,7 @@ import 'package:loja_de_roupas/app/view/login.view.dart';
 import 'package:loja_de_roupas/app/view/myProducts.view.dart';
 import 'package:loja_de_roupas/app/view/profile.view.dart';
 import 'package:loja_de_roupas/app/view/register.view.dart';
+import 'package:loja_de_roupas/app/view/registerProducts.view.dart';
 import 'package:loja_de_roupas/app/view/settings.view.dart';
 import 'package:loja_de_roupas/app/view/splash.view.dart';
 
@@ -27,10 +28,11 @@ class App extends StatelessWidget {
         '/home':(context) => HomeView(),
         '/configuracoes':(context) => SettingsView(),
         '/sobre': (context) => AboutView(),
-        'perfil': (context) => ProfileView(),
+        '/perfil': (context) => ProfileView(),
         '/meuCarinho': (context) =>  MyProductsView(),
         '/favoritos':(context) => FavoriteView(),
         '/pagamento':(context) => PaymentView(),
+        '/cadastrarProdutos':(context) => RegisterProductView(),
       },
     );
   }

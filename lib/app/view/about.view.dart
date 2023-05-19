@@ -16,7 +16,7 @@ class AboutView extends StatelessWidget {
         ),
         drawer: DrawerGlobal().criarDrawer(context),
         body: const Center(
-          child: Text('Sobre minha loja e politicas de privacidade'),
+          child: Text('Pagina ainda em construção'),
         ),
       ),
     );

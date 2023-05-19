@@ -23,7 +23,7 @@ class DrawerGlobal {
             ListTile(
               leading: const Icon(Icons.account_circle_outlined),
               title: const Text('Perfil'),
-              onTap: ()=> Navigator.pushNamed(context, 'perfil'),
+              onTap: ()=> Navigator.pushNamed(context, '/perfil'),
             ),
             ListTile(
               leading: Icon(Icons.home),
@@ -60,6 +60,13 @@ class DrawerGlobal {
                 Navigator.pushNamed(context, '/sobre');
               },
             ),
+            ListTile(
+            leading: Icon(Icons.add_shopping_cart),
+            title: Text('Cadastrar produtos'),
+            onTap: () {
+              Navigator.pushNamed(context, '/cadastrarProdutos');
+            },
+          ),
           ],
         ),
       );
