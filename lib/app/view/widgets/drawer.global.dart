@@ -27,48 +27,48 @@ class DrawerGlobal {
             ),
             ListTile(
               leading: Icon(Icons.home),
-              title: Text('Home'),
+              title: const Text('Home'),
               onTap: () {
                 Navigator.pushNamed(context, '/home');
               },
             ),
             ListTile(
               leading: Icon(Icons.add_shopping_cart),
-              title: Text('Meu carinho'),
+              title: const Text('Meu carinho'),
               onTap: () {
                 Navigator.pushNamed(context, '/meuCarinho');
               },
             ),
             ListTile(
               leading: Icon(Icons.favorite_border),
-              title: Text('Favoritos'),
+              title: const Text('Favoritos'),
               onTap: () {
                 Navigator.pushNamed(context, '/favoritos');
               },
             ),
             ListTile(
               leading: Icon(Icons.settings),
-              title: Text('Configurações'),
+              title: const Text('Configurações'),
               onTap: () {
                 Navigator.pushNamed(context, '/configuracoes');
               },
             ),
             ListTile(
               leading: const Icon(Icons.warning),
-              title: Text('Sobre'),
+              title: const Text('Sobre'),
               onTap: () {
                 Navigator.pushNamed(context, '/sobre');
               },
             ),
             ListTile(
-            leading: Icon(Icons.add_shopping_cart),
-            title: Text('Cadastrar produtos'),
-            onTap: () {
+              leading: Icon(Icons.add_shopping_cart),
+              title: const Text('Cadastrar produtos'),
+              onTap: () {
               Navigator.pushNamed(context, '/cadastrarProdutos');
-            },
-          ),
-          ],
-        ),
-      );
+              },
+            ),
+        ],
+      ),
+    );
   }
 }

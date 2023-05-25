@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:loja_de_roupas/app/view/addcard.vew.dart';
+import 'package:loja_de_roupas/app/view/listcard.view.dart';
 import 'package:loja_de_roupas/app/view/widgets/drawer.global.dart';
 
 import '../utils/global.colors.dart';
@@ -51,27 +53,45 @@ class ProfileView extends StatelessWidget {
                 ],
               ),
             ),
-            const ListTile(
+            ListTile(
               leading: Icon(Icons.location_on),
               title: Text('Endereço'),
               trailing: Icon(Icons.keyboard_arrow_right),
             ),
-            const ListTile(
-              leading: Icon(Icons.credit_card),
-              title: Text('Métodos de pagamento'),
+            ListTile(
+              leading: Icon(Icons.credit_card), 
+              title: Text('Adicionar cartão'), 
               trailing: Icon(Icons.keyboard_arrow_right),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => AddCardView()),
+                );
+              },
             ),
-             const ListTile(
+            ListTile(
+              leading: Icon(Icons.credit_card),
+              title: Text('Ver cartões'),
+              trailing: Icon(Icons.keyboard_arrow_right),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ListCardView()),
+                );
+              },
+            ),
+            ListTile(
               leading: Icon(Icons.notifications),
               title: Text('Notificações'),
               trailing: Icon(Icons.keyboard_arrow_right),
             ),
-            const ListTile(
+            ListTile(
               leading: Icon(Icons.help_outline),
               title: Text('Ajuda'),
               trailing: Icon(Icons.keyboard_arrow_right),
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {},
               child: Text('Sair'),
