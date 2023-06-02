@@ -28,13 +28,13 @@ class HomeView extends StatelessWidget {
       future: dao.consultarTodos(),
       builder: (context, AsyncSnapshot<List<Produto>> lista) {
         if (!lista.hasData) return const CircularProgressIndicator();
-        if (lista.data == null) return const Text('Não há contatos...');
-        List<Produto> listaContatos = lista.data!;
+        if (lista.data == null) return const Text('Não há cartaos...');
+        List<Produto> listacartaos = lista.data!;
         return ListView.builder(
-          itemCount: listaContatos.length,
+          itemCount: listacartaos.length,
           itemBuilder: (context, indice) {
-            var contato = listaContatos[indice];
-            return criarItemLista(context, contato);
+            var cartao = listacartaos[indice];
+            return criarItemLista(context, cartao);
           },
         );
       },

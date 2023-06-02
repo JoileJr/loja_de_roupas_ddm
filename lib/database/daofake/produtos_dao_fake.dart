@@ -21,20 +21,20 @@ class ProdutoDAOFake implements ProdutoInterfaceDAO {
   }
 
   @override
-  Produto salvar(Produto contato) {
-    if (contato.id == null) {
-      contato = Produto(
+  Produto salvar(Produto cartao) {
+    if (cartao.id == null) {
+      cartao = Produto(
         id: produto.length,
-        nome: contato.nome,
-        descricao: contato.descricao,
-        preco: contato.preco,
+        nome: cartao.nome,
+        descricao: cartao.descricao,
+        preco: cartao.preco,
       );
-      produto.add(contato);
+      produto.add(cartao);
     } else {
-      int i = (contato.id as int) - 1;
-      produto[i] = contato;
+      int i = (cartao.id as int) - 1;
+      produto[i] = cartao;
     }
-    print(contato);
-    return contato;
+    print(cartao);
+    return cartao;
   }
 }
