@@ -14,14 +14,14 @@ class CartaoDAOFake implements CartaoInterfaceDAO {
   }
 
   @override
-  bool excluir(dynamic id) {
+  Future<bool> excluir(dynamic id) {
     print('excluir ${cartoes[id - 1]}');
     cartoes.remove(cartoes[id - 1]);
-    return true;
+    return Future.value();
   }
 
   @override
-  Cartao salvar(Cartao cartao) {
+  Future<Cartao> salvar(Cartao cartao) {
     if (cartao.id == null) {
       cartao = Cartao(
         id: cartoes.length,
@@ -36,6 +36,6 @@ class CartaoDAOFake implements CartaoInterfaceDAO {
       cartoes[i] = cartao;
     }
     print(cartao);
-    return cartao;
+    return Future.value(cartao);
   }
 }

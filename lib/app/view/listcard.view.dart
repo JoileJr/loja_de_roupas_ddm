@@ -5,10 +5,11 @@ import 'package:loja_de_roupas/app/view/interface/cartao_interface_dao.dart';
 import 'package:loja_de_roupas/app/view/widgets/drawer.global.dart';
 import 'package:loja_de_roupas/app/view/widgets/painel_botoes.dart';
 import 'package:loja_de_roupas/database/daofake/cartao_dao_fake.dart';
+import 'package:loja_de_roupas/database/sqlite/dao/contato_dao_sqlite.dart';
 
 class ListCardView extends StatelessWidget {
   ListCardView({Key? key}) : super(key: key);
-  CartaoInterfaceDAO dao = CartaoDAOFake();
+  CartaoInterfaceDAO dao = cartaoDAOSQLite();
 
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -28,13 +29,13 @@ class ListCardView extends StatelessWidget {
       future: dao.consultarTodos(),
       builder: (context, AsyncSnapshot<List<Cartao>> lista) {
         if (!lista.hasData) return const CircularProgressIndicator();
-        if (lista.data == null) return const Text('Não há contatos...');
+        if (lista.data == null) return const Text('Não há cartaos...');
         List<Cartao> listaCartoes = lista.data!;
         return ListView.builder(
           itemCount: listaCartoes.length,
           itemBuilder: (context, indice) {
-            var contato = listaCartoes[indice];
-            return criarItemLista(context, contato);
+            var cartao = listaCartoes[indice];
+            return criarItemLista(context, cartao);
           },
         );
       },

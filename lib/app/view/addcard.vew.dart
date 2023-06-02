@@ -8,6 +8,7 @@ import 'package:loja_de_roupas/app/view/widgets/cartao/cartao_Nome.dart';
 import 'package:loja_de_roupas/app/view/widgets/cartao/cartao_Numero.dart';
 import 'package:loja_de_roupas/app/view/widgets/cartao/cartao_dataValidade.dart';
 import 'package:loja_de_roupas/app/view/widgets/drawer.global.dart';
+import 'package:loja_de_roupas/database/sqlite/dao/contato_dao_sqlite.dart';
 
 import '../../database/daofake/cartao_dao_fake.dart';
 
@@ -29,9 +30,13 @@ class AddCardView extends StatelessWidget {
           child: Column(
             children: [
               campoNomeCartao,
+              const SizedBox(height: 20),
               campoNumeroCartao,
+              const SizedBox(height: 20),
               campoCVC,
+              const SizedBox(height: 20),
               campoValidade,
+              const SizedBox(height: 20),
               criarBotao(context),
             ],
           )
@@ -52,7 +57,7 @@ class AddCardView extends StatelessWidget {
         var formState = formKey.currentState;
         if (formState != null && formState.validate()) {
           var cartao = preencherDTO();
-          CartaoInterfaceDAO dao = CartaoDAOFake();
+          CartaoInterfaceDAO dao = cartaoDAOSQLite();
           dao.salvar(cartao);
           Navigator.pop(context);
         }
