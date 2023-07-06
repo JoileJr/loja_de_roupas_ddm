@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:loja_de_roupas/app/utils/global.colors.dart';
-import 'package:loja_de_roupas/app/view/dto/cartao.dart';
-import 'package:loja_de_roupas/app/view/interface/cartao_interface_dao.dart';
+import 'package:loja_de_roupas/app/view/dto/marca.dart';
+import 'package:loja_de_roupas/app/view/interface/marca_interface_dao.dart';
 import 'package:loja_de_roupas/app/view/widgets/drawer.global.dart';
 import 'package:loja_de_roupas/app/view/widgets/painel_botoes.dart';
-import 'package:loja_de_roupas/database/sqlite/dao/cartao_dao_sqlite.dart';
+import 'package:loja_de_roupas/database/sqlite/dao/marca_dao_sqlite.dart';
 
-class ListCardView extends StatelessWidget {
-  ListCardView({Key? key}) : super(key: key);
-  CartaoInterfaceDAO dao = cartaoDAOSQLite();
+class ListarMarcaView extends StatelessWidget {
+  ListarMarcaView({Key? key}) : super(key: key);
+  MarcaInterfaceDAO dao = marcaDAOSQLite();
 
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -26,32 +26,32 @@ class ListCardView extends StatelessWidget {
   Widget criarLista(BuildContext context) {
     return FutureBuilder(
       future: dao.consultarTodos(),
-      builder: (context, AsyncSnapshot<List<Cartao>> lista) {
+      builder: (context, AsyncSnapshot<List<Marca>> lista) {
         if (!lista.hasData) return const CircularProgressIndicator();
-        if (lista.data == null) return const Text('Não há cartaos...');
-        List<Cartao> listaCartoes = lista.data!;
+        if (lista.data == null) return const Text('Não há marcas...');
+        List<Marca> listaMarcas = lista.data!;
         return ListView.builder(
-          itemCount: listaCartoes.length,
+          itemCount: listaMarcas.length,
           itemBuilder: (context, indice) {
-            var cartao = listaCartoes[indice];
-            return criarItemLista(context, cartao);
+            var marca = listaMarcas[indice];
+            return criarItemLista(context, marca);
           },
         );
       },
     );
   }
 
-  Widget criarItemLista(BuildContext context, Cartao cartao){
+  Widget criarItemLista(BuildContext context, Marca marca){
     return ItemLista(
-      cartao: cartao, 
+      marca: marca, 
       alterar: () {
-        Navigator.pushNamed(context, '/adicionarCartao'); 
+        Navigator.pushNamed(context, '/adicionarMarca'); 
       },
       detalhes: (){
-        Navigator.pushNamed(context, '/listarCartao');
+        Navigator.pushNamed(context, '/listarMarca');
       }, 
       excluir: (){
-        dao.excluir(cartao.id);
+        dao.excluir(marca.id);
       } 
     );
   }
@@ -59,13 +59,13 @@ class ListCardView extends StatelessWidget {
 }
 
 class ItemLista extends StatelessWidget {
-  final Cartao cartao;
+  final Marca marca;
   final VoidCallback alterar;
   final VoidCallback detalhes;
   final VoidCallback excluir;
 
   const ItemLista(
-      {required this.cartao,
+      {required this.marca,
       required this.alterar,
       required this.detalhes,
       required this.excluir,
@@ -75,8 +75,7 @@ class ItemLista extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title: Text(cartao.nomeNocartao),
-      subtitle: Text(cartao.numeroDoCartao),
+      title: Text(marca.nome),
       trailing: PainelBotoes(alterar: alterar, excluir: excluir),
       onTap: detalhes,
     );

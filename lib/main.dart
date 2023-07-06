@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loja_de_roupas/app/view/%20payment.view.dart';
+import 'package:loja_de_roupas/app/view/CadastrarMarca.dart';
+import 'package:loja_de_roupas/app/view/ListarMarca.dart';
 import 'package:loja_de_roupas/app/view/about.view.dart';
 import 'package:loja_de_roupas/app/view/addcard.vew.dart';
 import 'package:loja_de_roupas/app/view/favorite.view.dart';
@@ -9,7 +11,6 @@ import 'package:loja_de_roupas/app/view/login.view.dart';
 import 'package:loja_de_roupas/app/view/myProducts.view.dart';
 import 'package:loja_de_roupas/app/view/profile.view.dart';
 import 'package:loja_de_roupas/app/view/register.view.dart';
-import 'package:loja_de_roupas/app/view/registerProducts.view.dart';
 import 'package:loja_de_roupas/app/view/settings.view.dart';
 import 'package:loja_de_roupas/app/view/splash.view.dart';
 
@@ -34,9 +35,10 @@ class App extends StatelessWidget {
         '/meuCarinho': (context) =>  MyProductsView(),
         '/favoritos':(context) => FavoriteView(),
         '/pagamento':(context) => PaymentView(),
-        '/cadastrarProdutos':(context) => RegisterProductView(),
         '/adicionarCartao':(context) => AddCardView(),
         '/listarCartao': (context) => ListCardView(),
+        '/adicionarMarca':(context) => CadastrarMarcaView(),
+        '/listarMarca': (context) => ListarMarcaView(),
       },
     );
   }

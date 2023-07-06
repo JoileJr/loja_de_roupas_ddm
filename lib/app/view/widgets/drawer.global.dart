@@ -62,9 +62,16 @@ class DrawerGlobal {
             ),
             ListTile(
               leading: Icon(Icons.add_shopping_cart),
-              title: const Text('Cadastrar produtos'),
+              title: const Text('Cadastrar marcas'),
               onTap: () {
-              Navigator.pushNamed(context, '/cadastrarProdutos');
+              Navigator.pushNamed(context, '/adicionarMarca');
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.add_shopping_cart),
+              title: const Text('listar Marcas'),
+              onTap: () {
+              Navigator.pushNamed(context, '/listarMarca');
               },
             ),
         ],

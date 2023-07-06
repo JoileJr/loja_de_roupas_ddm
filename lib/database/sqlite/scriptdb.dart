@@ -8,11 +8,21 @@ const criarCartao = '''
     ,dataValidade VARCHAR(300) NOT NULL 
   )
 ''';
+
+const criarMarca = '''
+ CREATE TABLE marca(
+    id INTEGER NOT NULL PRIMARY KEY
+    ,nome VARCHAR(200) NOT NULL
+  )
+''';
 //array de inserções
+
 const insercoesCartao = [
   '''
 INSERT INTO cartao (nomeNocartao, numeroDoCartao, cvc, dataValidade)
 VALUES ('Joile O A Junior','1111 1111 1111 1111','010','12/30')
+INSERT INTO marca (nome)
+VALUES ('NIKE')
 '''
 ];
 

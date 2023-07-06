@@ -15,7 +15,9 @@ class Conexao{
         version: 1,                                    // versão
         onCreate: (db, v){                             // criando os elementos (tabelas e registros) do BD
           db.execute(criarCartao);
+          db.execute(criarMarca);
           insercoesCartao.forEach(db.execute);
+          //insercoesMarca.forEach(db.execute);
         }, 
       );
       _fechado = false;
