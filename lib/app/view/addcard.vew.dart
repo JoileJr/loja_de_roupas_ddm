@@ -10,8 +10,6 @@ import 'package:loja_de_roupas/app/view/widgets/cartao/cartao_dataValidade.dart'
 import 'package:loja_de_roupas/app/view/widgets/drawer.global.dart';
 import 'package:loja_de_roupas/database/sqlite/dao/cartao_dao_sqlite.dart';
 
-import '../../database/daofake/cartao_dao_fake.dart';
-
 class AddCardView extends StatelessWidget {
   final formKey = GlobalKey<FormState>();
   AddCardView({Key? key}) : super(key: key);

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loja_de_roupas/app/view/%20payment.view.dart';
 import 'package:loja_de_roupas/app/view/CadastrarMarca.dart';
+import 'package:loja_de_roupas/app/view/CadastrarProduto.dart';
 import 'package:loja_de_roupas/app/view/ListarMarca.dart';
 import 'package:loja_de_roupas/app/view/about.view.dart';
 import 'package:loja_de_roupas/app/view/addcard.vew.dart';
@@ -39,6 +40,7 @@ class App extends StatelessWidget {
         '/listarCartao': (context) => ListCardView(),
         '/adicionarMarca':(context) => CadastrarMarcaView(),
         '/listarMarca': (context) => ListarMarcaView(),
+        '/cadastrarProduto': (context) => CadastrarProdutoView()
       },
     );
   }

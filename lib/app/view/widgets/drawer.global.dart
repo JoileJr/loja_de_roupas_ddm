@@ -47,20 +47,6 @@ class DrawerGlobal {
               },
             ),
             ListTile(
-              leading: Icon(Icons.settings),
-              title: const Text('Configurações'),
-              onTap: () {
-                Navigator.pushNamed(context, '/configuracoes');
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.warning),
-              title: const Text('Sobre'),
-              onTap: () {
-                Navigator.pushNamed(context, '/sobre');
-              },
-            ),
-            ListTile(
               leading: Icon(Icons.add_shopping_cart),
               title: const Text('Cadastrar marcas'),
               onTap: () {
@@ -74,6 +60,13 @@ class DrawerGlobal {
               Navigator.pushNamed(context, '/listarMarca');
               },
             ),
+            ListTile(
+            leading: Icon(Icons.add_shopping_cart),
+            title: const Text('cadastrar produtos'),
+            onTap: () {
+              Navigator.pushNamed(context, '/cadastrarProduto');
+            },
+          ),
         ],
       ),
     );
