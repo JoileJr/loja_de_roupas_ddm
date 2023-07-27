@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loja_de_roupas/app/utils/global.colors.dart';
 
 class Botao extends StatelessWidget {
   final VoidCallback? salvar;
@@ -9,7 +10,12 @@ class Botao extends StatelessWidget {
   Widget build(BuildContext context) {
     return  ElevatedButton( 
       onPressed: salvar,
-      child: const Text('Salvar'),
+      style: ElevatedButton.styleFrom(
+        primary: GlobalColors.mainColor
+      ),
+      child: const Text(' Cadastre-se', 
+      style: TextStyle(color: Colors.white),
+      ),
     );
   }
 }

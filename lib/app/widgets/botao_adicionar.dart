@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loja_de_roupas/app/utils/global.colors.dart';
 
 class BotaoAdicionar extends StatelessWidget {
   final VoidCallback acao;
@@ -10,6 +11,7 @@ class BotaoAdicionar extends StatelessWidget {
       onPressed: () => acao(),
       tooltip: 'Adicionar Novo',
       child: const Icon(Icons.add),
+      backgroundColor: GlobalColors.mainColor,
     );
   }
 }
