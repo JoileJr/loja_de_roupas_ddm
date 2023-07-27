@@ -60,10 +60,10 @@ class _CidadeListaState extends State<CidadeLista> {
     return ItemLista(
       cidade: cidade, 
       alterar: () {
-        Navigator.pushNamed(context, '/fornecedor-form', arguments: cidade).then((value) => buscarCidades()); 
+        Navigator.pushNamed(context, '/cidade-form', arguments: cidade).then((value) => buscarCidades()); 
       },
       detalhes: (){
-        Navigator.pushNamed(context, '/fornecedor-detalhe', arguments: cidade);
+        Navigator.pushNamed(context, '/cidade-form', arguments: cidade);
       }, 
       excluir: (){
         dao.excluir(cidade.id);

@@ -88,6 +88,7 @@ class fornecedorDetalhe extends StatelessWidget {
   Widget botaoVoltar(BuildContext context){
     return FloatingActionButton( 
       child: const Icon(Icons.arrow_back),
+      backgroundColor: GlobalColors.mainColor,
       onPressed: ()=>Navigator.pop(context),
     );
   }

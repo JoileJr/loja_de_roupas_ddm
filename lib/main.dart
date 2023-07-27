@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loja_de_roupas/app/view/cidade_form.dart';
 import 'package:loja_de_roupas/app/view/fornecedor_detalhe.dart';
 import 'package:loja_de_roupas/app/view/fornecedor_form.dart';
 import 'package:loja_de_roupas/app/view/fornecedor_lista.dart';
@@ -24,6 +25,7 @@ class App extends StatelessWidget {
         '/fornecedor-form': (context) => FornecedorForm(),
         '/fornecedor-detalhe': (context) => fornecedorDetalhe(),
         '/cidade-lista': (context) => CidadeLista(),
+        '/cidade-form': (context) => CidadeForm(),
       },
     );
   }

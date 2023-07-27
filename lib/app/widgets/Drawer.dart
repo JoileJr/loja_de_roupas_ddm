@@ -28,6 +28,13 @@ class DrawerWidget {
             },
           ),
           ListTile(
+            leading: Icon(Icons.add_location),
+            title: const Text('Cadastrar cidade'),
+            onTap: () {
+              Navigator.pushNamed(context, '/cidade-form');
+            },
+          ),
+          ListTile(
             leading: Icon(Icons.location_on),
             title: const Text('Lista de cidades'),
             onTap: () {
