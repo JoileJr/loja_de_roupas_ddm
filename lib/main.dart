@@ -5,6 +5,7 @@ import 'package:loja_de_roupas/app/view/fornecedor_lista.dart';
 
 import 'package:loja_de_roupas/app/view/home.view.dart';
 import 'package:loja_de_roupas/app/view/splash.view.dart';
+import 'package:loja_de_roupas/app/view/cidade_lista.dart';
 
 void main() {
   runApp(const App());
@@ -22,6 +23,7 @@ class App extends StatelessWidget {
         '/fornecedor-lista': (context) => FornecedorLista(),
         '/fornecedor-form': (context) => FornecedorForm(),
         '/fornecedor-detalhe': (context) => fornecedorDetalhe(),
+        '/cidade-lista': (context) => CidadeLista(),
       },
     );
   }

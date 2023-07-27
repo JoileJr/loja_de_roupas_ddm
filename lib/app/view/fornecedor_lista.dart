@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:loja_de_roupas/app/database/dao/fornecedor_dao_sqlite.dart';
 import 'package:loja_de_roupas/app/dto/fornecedor.dart';
 import 'package:loja_de_roupas/app/interface/fornecedor_interface_dao.dart';
+import 'package:loja_de_roupas/app/utils/global.colors.dart';
 import 'package:loja_de_roupas/app/widgets/BarraNavagacao.dart';
+import 'package:loja_de_roupas/app/widgets/Drawer.dart';
 import 'package:loja_de_roupas/app/widgets/PainelBotoes.dart';
 import 'package:loja_de_roupas/app/widgets/botao_adicionar.dart';
 import 'package:loja_de_roupas/app/widgets/foto_fornecedor.dart';
@@ -20,7 +22,11 @@ class _FornecedorListaState extends State<FornecedorLista> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Lista fornecedors')),
+      appBar: AppBar(
+        title: const Text('LOJA DE ROUPAS'),
+        backgroundColor: GlobalColors.mainColor,
+      ),
+      drawer: DrawerWidget().criarDrawer(context),
       body: criarLista(context),
       floatingActionButton: BotaoAdicionar(acao: ()=> Navigator.pushNamed(context, '/fornecedor-form').then((value)=>buscarfornecedors())),
       bottomNavigationBar: const BarraNavegacao(),

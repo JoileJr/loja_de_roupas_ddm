@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loja_de_roupas/app/dto/fornecedor.dart';
+import 'package:loja_de_roupas/app/utils/global.colors.dart';
+import 'package:loja_de_roupas/app/widgets/Drawer.dart';
 import 'package:loja_de_roupas/app/widgets/foto_fornecedor.dart';
 
 class fornecedorDetalhe extends StatelessWidget {
@@ -9,6 +11,11 @@ class fornecedorDetalhe extends StatelessWidget {
   Widget build(BuildContext context) {
     Fornecedor fornecedor = receberfornecedor(context);
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('LOJA DE ROUPAS'),
+        backgroundColor: GlobalColors.mainColor,
+      ),
+      drawer: DrawerWidget().criarDrawer(context),
       body: ListView( 
         padding: const EdgeInsets.all(60),
         children: [

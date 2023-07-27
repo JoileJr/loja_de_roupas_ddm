@@ -9,7 +9,7 @@ class Botao extends StatelessWidget {
   Widget build(BuildContext context) {
     return  ElevatedButton( 
       onPressed: salvar,
-      child: const Text('ok'),
+      child: const Text('Salvar'),
     );
   }
 }

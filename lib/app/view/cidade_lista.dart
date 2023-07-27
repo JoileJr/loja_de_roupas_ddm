@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:loja_de_roupas/app/database/dao/cidade_dao_sqlite.dart';
 import 'package:loja_de_roupas/app/dto/cidade.dart';
 import 'package:loja_de_roupas/app/interface/cidade_interface_dao.dart';
+import 'package:loja_de_roupas/app/utils/global.colors.dart';
 import 'package:loja_de_roupas/app/widgets/BarraNavagacao.dart';
+import 'package:loja_de_roupas/app/widgets/Drawer.dart';
 import 'package:loja_de_roupas/app/widgets/PainelBotoes.dart';
 import 'package:loja_de_roupas/app/widgets/botao_adicionar.dart';
 
@@ -19,7 +21,11 @@ class _CidadeListaState extends State<CidadeLista> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Lista Cidades')),
+      appBar: AppBar(
+        title: const Text('LOJA DE ROUPAS'),
+        backgroundColor: GlobalColors.mainColor,
+      ),
+      drawer: DrawerWidget().criarDrawer(context),
       body: criarLista(context),
       floatingActionButton: BotaoAdicionar(acao: ()=> Navigator.pushNamed(context, '/fornecedor-form').then((value)=>buscarCidades())),
       bottomNavigationBar: const BarraNavegacao(),

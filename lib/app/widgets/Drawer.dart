@@ -27,6 +27,13 @@ class DrawerWidget {
               Navigator.pushNamed(context, '/fornecedor-lista');
             },
           ),
+          ListTile(
+            leading: Icon(Icons.location_on),
+            title: const Text('Lista de cidades'),
+            onTap: () {
+              Navigator.pushNamed(context, '/cidade-lista');
+            },
+          ),
         ],
       ),
     );

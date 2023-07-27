@@ -4,7 +4,9 @@ import 'package:loja_de_roupas/app/database/dao/fornecedor_dao_sqlite.dart';
 import 'package:loja_de_roupas/app/dto/cidade.dart';
 import 'package:loja_de_roupas/app/dto/fornecedor.dart';
 import 'package:loja_de_roupas/app/interface/fornecedor_interface_dao.dart';
+import 'package:loja_de_roupas/app/utils/global.colors.dart';
 import 'package:loja_de_roupas/app/widgets/Botao.dart';
+import 'package:loja_de_roupas/app/widgets/Drawer.dart';
 import 'package:loja_de_roupas/app/widgets/campo_email.dart';
 import 'package:loja_de_roupas/app/widgets/campo_nome.dart';
 import 'package:loja_de_roupas/app/widgets/campo_telefone.dart';
@@ -26,7 +28,11 @@ class _FornecedorFormState extends State<FornecedorForm> {
     Future<List<Cidade>> cidades = CidadeDAOSQLite().consultarTodos();
     receberfornecedorParaAlteracao(context);
     return Scaffold(
-      appBar: AppBar(title: const Text('Cadastro')),
+      appBar: AppBar(
+        title: const Text('LOJA DE ROUPAS'),
+        backgroundColor: GlobalColors.mainColor,
+      ),
+      drawer: DrawerWidget().criarDrawer(context),
       body: FutureBuilder(
         future: cidades,
         builder: (context,AsyncSnapshot<List<Cidade>> lista){
