@@ -22,7 +22,7 @@ class _CidadeFormFormState extends State<CidadeForm> {
 
   @override
   Widget build(BuildContext context){
-    Future<List<Estado>> cidades = EstadoDAOSQLite().consultarTodos();
+    Future<List<Estado>> estados = EstadoDAOSQLite().consultarTodos();
     receberfornecedorParaAlteracao(context);
     return Scaffold(
       appBar: AppBar(
@@ -31,7 +31,7 @@ class _CidadeFormFormState extends State<CidadeForm> {
       ),
       drawer: DrawerWidget().criarDrawer(context),
       body: FutureBuilder(
-        future: cidades,
+        future: estados,
         builder: (context,AsyncSnapshot<List<Estado>> lista){
           if(!lista.hasData || lista.data == null) return const Text('Necessário realizar o cadastro de estados');
           listaEstados = lista.data!;

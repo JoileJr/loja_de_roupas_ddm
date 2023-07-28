@@ -41,6 +41,20 @@ class DrawerWidget {
               Navigator.pushNamed(context, '/cidade-lista');
             },
           ),
+          ListTile(
+            leading: Icon(Icons.add_card),
+            title: const Text('Cadastrar marcas'),
+            onTap: () {
+              Navigator.pushNamed(context, '/marca-form');
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.abc),
+            title: const Text('Lista de marcas'),
+            onTap: () {
+              Navigator.pushNamed(context, '/marca-lista');
+            },
+          ),
         ],
       ),
     );

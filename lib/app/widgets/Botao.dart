@@ -13,7 +13,7 @@ class Botao extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         primary: GlobalColors.mainColor
       ),
-      child: const Text(' Cadastre-se', 
+      child: const Text('Salvar', 
       style: TextStyle(color: Colors.white),
       ),
     );

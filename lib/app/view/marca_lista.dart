@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:loja_de_roupas/app/database/dao/cidade_dao_sqlite.dart';
-import 'package:loja_de_roupas/app/dto/cidade.dart';
-import 'package:loja_de_roupas/app/interface/cidade_interface_dao.dart';
+import 'package:loja_de_roupas/app/database/dao/marca_dao_sqlite.dart';
+import 'package:loja_de_roupas/app/dto/marca.dart';
+import 'package:loja_de_roupas/app/interface/marca_interface_dao.dart';
 import 'package:loja_de_roupas/app/utils/global.colors.dart';
 import 'package:loja_de_roupas/app/widgets/BarraNavagacao.dart';
 import 'package:loja_de_roupas/app/widgets/Drawer.dart';
-import 'package:loja_de_roupas/app/widgets/PainelBotoes.dart';
 import 'package:loja_de_roupas/app/widgets/botao_adicionar.dart';
 
-class CidadeLista extends StatefulWidget {
-  const CidadeLista({Key? key}) : super(key: key);
+import '../widgets/PainelBotoes.dart';
+
+class MarcaLista extends StatefulWidget {
+  const MarcaLista({Key? key}) : super(key: key);
 
   @override
-  State<CidadeLista> createState() => _CidadeListaState();
+  State<MarcaLista> createState() => _MarcaListaState();
 }
 
-class _CidadeListaState extends State<CidadeLista> {
-  CidadeInterfaceDAO dao = CidadeDAOSQLite();
+class _MarcaListaState extends State<MarcaLista> {
+  MarcaInterfaceDAO dao = MarcaDAOSQLite();
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +28,7 @@ class _CidadeListaState extends State<CidadeLista> {
       ),
       drawer: DrawerWidget().criarDrawer(context),
       body: criarLista(context),
-      floatingActionButton: BotaoAdicionar(acao: ()=> Navigator.pushNamed(context, '/cidade-form').then((value)=>buscarCidades())),
+      floatingActionButton: BotaoAdicionar(acao: ()=> Navigator.pushNamed(context, '/marca-form').then((value)=>buscarMarcas())),
       bottomNavigationBar: const BarraNavegacao(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked
     );
@@ -35,15 +36,15 @@ class _CidadeListaState extends State<CidadeLista> {
 
   Widget criarLista(BuildContext context) {
     return FutureBuilder(
-      future: buscarCidades(),
-      builder: (context,AsyncSnapshot<List<Cidade>> lista){
+      future: buscarMarcas(),
+      builder: (context,AsyncSnapshot<List<Marca>> lista){
         if(!lista.hasData) return const CircularProgressIndicator();
-        if(lista.data == null) return const Text('Não há Cidades...');
-        List<Cidade> listaCidades = lista.data!;
+        if(lista.data == null) return const Text('Não há Marcas...');
+        List<Marca> listaMarcas = lista.data!;
         return ListView.builder(
-          itemCount: listaCidades.length,
+          itemCount: listaMarcas.length,
           itemBuilder: (context, indice) {
-            var fornecedor = listaCidades[indice];
+            var fornecedor = listaMarcas[indice];
             return criarItemLista(context, fornecedor);
           },
         );
@@ -51,41 +52,40 @@ class _CidadeListaState extends State<CidadeLista> {
     );
   }
 
-  Future<List<Cidade>> buscarCidades(){
+  Future<List<Marca>> buscarMarcas(){
     setState(() {});
     return dao.consultarTodos();
   }
 
-  Widget criarItemLista(BuildContext context, Cidade cidade){
+  Widget criarItemLista(BuildContext context, Marca marca){
     return ItemLista(
-      cidade: cidade, 
+      marca: marca, 
       alterar: () {
-        Navigator.pushNamed(context, '/cidade-form', arguments: cidade).then((value) => buscarCidades()); 
+        Navigator.pushNamed(context, '/marca-form', arguments: marca).then((value) => buscarMarcas()); 
       },
       detalhes: (){
-        Navigator.pushNamed(context, '/cidade-form', arguments: cidade);
+        Navigator.pushNamed(context, '/marca-form', arguments: marca);
       }, 
       excluir: (){
-        dao.excluir(cidade.id);
-        buscarCidades();
+        dao.excluir(marca.id);
+        buscarMarcas();
       } 
     );
   }
 }
 
 class ItemLista extends StatelessWidget {
-  final Cidade cidade;
+  final Marca marca;
   final VoidCallback alterar;
   final VoidCallback detalhes;
   final VoidCallback excluir;
 
-  const ItemLista({required this.cidade,required this.alterar, required this.detalhes, required this.excluir, Key? key}) : super(key: key);
+  const ItemLista({required this.marca,required this.alterar, required this.detalhes, required this.excluir, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ListTile(  
-      title: Text(cidade.nome),
-      subtitle: Text(cidade.estado.nome),
+      title: Text(marca.nome),
       trailing: PainelBotoes(
         alterar: alterar, 
         excluir: excluir

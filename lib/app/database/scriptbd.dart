@@ -42,6 +42,28 @@ const criarTabelas = [
     ,FOREIGN KEY (fornecedor_id) REFERENCES fornecedor (id)
   )
 ''',
+'''
+CREATE TABLE produto (
+    id INTEGER PRIMARY KEY,
+    nome TEXT NOT NULL,
+    preco TEXT NOT NULL
+  )
+''',
+'''
+CREATE TABLE marca (
+    id INTEGER PRIMARY KEY,
+    nome TEXT NOT NULL
+  )
+''',
+'''
+CREATE TABLE produto_marca (
+    produtoId INTEGER NOT NULL,
+    marcaId INTEGER NOT NULL,
+    PRIMARY KEY (produtoId, marcaId),
+    FOREIGN KEY (produtoId) REFERENCES produto (id) ON DELETE CASCADE,
+    FOREIGN KEY (marcaId) REFERENCES marca (id) ON DELETE CASCADE
+  )
+'''
 ];
 
 //array de inserções
@@ -89,5 +111,32 @@ VALUES ('Maitê','(11) 9 9632-8578', 'maite@email.com','https://cdn.pixabay.com/
 '''
 INSERT INTO fornecedor (nome, telefone, email, url_avatar, cidade_id)
 VALUES ('Hortência','(11) 9 9562-3356','hortencia@email.com','https://cdn.pixabay.com/photo/2021/01/24/09/28/girl-5944691_960_720.jpg', 3)
+''',
 '''
+INSERT INTO marca(nome) VALUES ('NIKE')
+''',
+'''
+INSERT INTO marca(nome) VALUES ('ADIDAS')
+''',
+'''
+INSERT INTO marca(nome) VALUES ('PUMA')
+''',
+'''
+INSERT INTO produto(nome, preco) VALUES ('AIR FORCE', '240,00')
+''',
+'''
+INSERT INTO produto(nome, preco) VALUES ('STAN SMITH', '240,00')
+''',
+'''
+INSERT INTO produto(nome, preco) VALUES ('CAVEN', '240,00')
+''',
+'''
+INSERT INTO produto_marca(produtoId, produtoId) VALUES (1, 1)
+''',
+'''
+INSERT INTO produto_marca(produtoId, produtoId) VALUES (2, 2)
+''',
+'''
+INSERT INTO produto_marca(produtoId, produtoId) VALUES (3, 3)
+''',
 ];
