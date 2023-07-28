@@ -21,7 +21,7 @@ class DrawerWidget {
             },
           ),
           ListTile(
-            leading: Icon(Icons.list),
+            leading: Icon(Icons.group),
             title: const Text('Listar Fornecedor'),
             onTap: () {
               Navigator.pushNamed(context, '/fornecedor-lista');
@@ -42,7 +42,7 @@ class DrawerWidget {
             },
           ),
           ListTile(
-            leading: Icon(Icons.add_card),
+            leading: Icon(Icons.add_home_sharp),
             title: const Text('Cadastrar marcas'),
             onTap: () {
               Navigator.pushNamed(context, '/marca-form');
