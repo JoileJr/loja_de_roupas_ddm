@@ -55,6 +55,20 @@ class DrawerWidget {
               Navigator.pushNamed(context, '/marca-lista');
             },
           ),
+          ListTile(
+            leading: Icon(Icons.add_shopping_cart),
+            title: const Text('Cadastro de produto'),
+            onTap: () {
+              Navigator.pushNamed(context, '/produto-form');
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.shop),
+            title: const Text('Lista de produto'),
+            onTap: () {
+              Navigator.pushNamed(context, '/produto-lista');
+            },
+          ),
         ],
       ),
     );

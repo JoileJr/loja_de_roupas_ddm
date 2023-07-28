@@ -7,6 +7,8 @@ import 'package:loja_de_roupas/app/view/fornecedor_lista.dart';
 import 'package:loja_de_roupas/app/view/home.view.dart';
 import 'package:loja_de_roupas/app/view/marca_form.dart';
 import 'package:loja_de_roupas/app/view/marca_lista.dart';
+import 'package:loja_de_roupas/app/view/produto_form.dart';
+import 'package:loja_de_roupas/app/view/produto_lista.dart';
 import 'package:loja_de_roupas/app/view/splash.view.dart';
 import 'package:loja_de_roupas/app/view/cidade_lista.dart';
 
@@ -25,11 +27,13 @@ class App extends StatelessWidget {
         '/home': (context) => HomeView(),
         '/fornecedor-lista': (context) => FornecedorLista(),
         '/fornecedor-form': (context) => FornecedorForm(),
-        '/fornecedor-detalhe': (context) => fornecedorDetalhe(),
+        '/fornecedor-detalhe': (context) => FornecedorDetalhe(),
         '/cidade-lista': (context) => CidadeLista(),
         '/cidade-form': (context) => CidadeForm(),
         '/marca-form': (context) => MarcaForm(),
         '/marca-lista': (context) => MarcaLista(),
+        '/produto-form': (context) => ProdutoForm(),
+        '/produto-lista': (context) => ProdutoLista(),
       },
     );
   }

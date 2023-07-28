@@ -43,27 +43,20 @@ const criarTabelas = [
   )
 ''',
 '''
-CREATE TABLE produto (
-    id INTEGER PRIMARY KEY,
-    nome TEXT NOT NULL,
-    preco TEXT NOT NULL
-  )
-''',
-'''
 CREATE TABLE marca (
     id INTEGER PRIMARY KEY,
     nome TEXT NOT NULL
   )
 ''',
 '''
-CREATE TABLE produto_marca (
-    produtoId INTEGER NOT NULL,
-    marcaId INTEGER NOT NULL,
-    PRIMARY KEY (produtoId, marcaId),
-    FOREIGN KEY (produtoId) REFERENCES produto (id) ON DELETE CASCADE,
-    FOREIGN KEY (marcaId) REFERENCES marca (id) ON DELETE CASCADE
+CREATE TABLE produto (
+    id INTEGER PRIMARY KEY,
+    nome TEXT NOT NULL,
+    preco TEXT NOT NULL
+    ,marca_id INTEGER NOT NULL
+    ,FOREIGN KEY (marca_id) REFERENCES marca (id)
   )
-'''
+''',
 ];
 
 //array de inserções
@@ -122,21 +115,12 @@ INSERT INTO marca(nome) VALUES ('ADIDAS')
 INSERT INTO marca(nome) VALUES ('PUMA')
 ''',
 '''
-INSERT INTO produto(nome, preco) VALUES ('AIR FORCE', '240,00')
+INSERT INTO produto(nome, preco, marca_id) VALUES ('AIR FORCE', '450,00', 1)
 ''',
 '''
-INSERT INTO produto(nome, preco) VALUES ('STAN SMITH', '240,00')
+INSERT INTO produto(nome, preco, marca_id) VALUES ('STAN SMITH', '360,00', 2)
 ''',
 '''
-INSERT INTO produto(nome, preco) VALUES ('CAVEN', '240,00')
-''',
-'''
-INSERT INTO produto_marca(produtoId, produtoId) VALUES (1, 1)
-''',
-'''
-INSERT INTO produto_marca(produtoId, produtoId) VALUES (2, 2)
-''',
-'''
-INSERT INTO produto_marca(produtoId, produtoId) VALUES (3, 3)
+INSERT INTO produto(nome, preco, marca_id) VALUES ('CAVEN', '240,00', 3)
 ''',
 ];

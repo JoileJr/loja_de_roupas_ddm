@@ -4,8 +4,8 @@ import 'package:loja_de_roupas/app/utils/global.colors.dart';
 import 'package:loja_de_roupas/app/widgets/Drawer.dart';
 import 'package:loja_de_roupas/app/widgets/foto_fornecedor.dart';
 
-class fornecedorDetalhe extends StatelessWidget {
-  const fornecedorDetalhe({Key? key}) : super(key: key);
+class FornecedorDetalhe extends StatelessWidget {
+  const FornecedorDetalhe({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
